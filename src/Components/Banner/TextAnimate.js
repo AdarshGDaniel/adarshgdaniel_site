@@ -25,21 +25,20 @@ const animation = keyframes`
 
 const BlinkAnimation = keyframes`
     0% { opacity: 0; color: black; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; color: red; }
+    50% { opacity: 1; color: red;}
+    100% { opacity: 0; color: black; }
 `
-const Blink = styled.span`
-    opacity: 0;
+const Blink = styled.h1`
     animation-name: ${BlinkAnimation};
-    animation-duration: 6s;
-    animation-fill-mode: forwards;
-    animation-iteration-mode: infinite;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 `
 
 const A1 = styled.span`
     opacity: 0;
     animation-name: ${animation};
     animation-duration: 3s;
+    animation-iteration-mode: infinite;
     animation-fill-mode: forwards;
 `
 const A2 = styled.span`
