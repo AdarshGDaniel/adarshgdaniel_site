@@ -1,0 +1,16 @@
+.banner{
+    height: 100vh;
+    overflow: hidden;
+}
+.my_image{
+    object-fit: contain;
+    position: fixed;
+    bottom: 0;
+    height: 90%;
+    object-fit: contain;
+}
+.about-col{
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}

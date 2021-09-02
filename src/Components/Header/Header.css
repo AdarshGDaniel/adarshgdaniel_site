@@ -1,0 +1,11 @@
+.nav-main{
+    background-color: white !important;
+    color: black !important;
+    box-shadow: none !important;
+}
+.nav-content{
+    justify-content: space-evenly;
+}
+.nav-pos{
+    position: fixed !important;
+}
