@@ -1,12 +1,13 @@
 import React from 'react'
 import styled, { keyframes } from "styled-components"
 import './Banner.css'
+import { AiFillWarning } from "react-icons/ai";
 
 export default function TextAnimate() {
     const reactArray = "Code".split("")
     return (
         <div className="box">
-            <h1><Blink>Note: Page under construction</Blink></h1>
+            <h1><Blink><AiFillWarning /> Page under construction! <AiFillWarning /></Blink></h1>
             <h1><A1>Hi,</A1> <A2>the</A2> <A3>name's</A3> <A4>Adarsh</A4></h1>
             <h3><Wrapper><A5>I</A5> <A6>Code</A6></Wrapper></h3>
             <h3><Wrapper><A5>I</A5> <A6>Design</A6></Wrapper></h3>
@@ -38,7 +39,6 @@ const A1 = styled.span`
     opacity: 0;
     animation-name: ${animation};
     animation-duration: 3s;
-    animation-iteration-mode: infinite;
     animation-fill-mode: forwards;
 `
 const A2 = styled.span`
