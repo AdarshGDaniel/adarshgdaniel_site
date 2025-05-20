@@ -1,0 +1,64 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+  background-color: #0c0c0c !important;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav-bar{
+  position: "static";
+  color: "red";
+  justify-content: space-between;
+  user-select: none;
+  position: sticky !important;
+  top: 0;
+  box-shadow: none !important;
+}
+.nav-bar .nav-inside{
+  justify-content: space-between;
+  font-size: 1em;
+}
+
+.nav-bar .nav-image{
+  max-width: 50px;
+}
+
+.nav-items a{
+  transform: translateY(0px);
+  transition: all 0.2s ease-in-out;
+  font-size: 1em !important;
+  user-select: none;
+}
+
+.nav-items a:hover{
+  transform: translateY(-2px);
+  transition: all 0.2s ease-in-out;
+  color: #ff0055 !important;
+}
+
+.nav-items a:active{
+  transform: translateY(0px);
+  transition: all 0.1s ease-in-out;
+}
+
+.pop-up-ham a{
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease-in-out;
+  background-color: #00000017;
+  user-select: none;
+}
+
+.pop-up-ham a:hover{
+  background-color: #ff0055;
+  border-radius: 50px;
+  color: white !important;
+  transition: all 0.4s ease-in-out;
+  
+}
+
+.pop-up-ham .MuiBox-root{
+  border: #ff0055 solid 2px;
+  border-style: dashed;
+  opacity: 0.8;
+}
