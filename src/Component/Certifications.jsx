@@ -48,7 +48,7 @@ const certifications = [
   {
     title: 'NULLCON conference',
     issuer: 'Participation',
-    link: 'Dec 2022',
+    link2: 'Dec 2022',
   },
   {
     title: 'Paper Presentation - IConSCEPT',
