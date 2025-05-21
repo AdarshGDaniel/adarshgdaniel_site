@@ -21,7 +21,7 @@ const educations = [
   {
     degree: 'M. Tech in Information Security',
     institution: 'Vellore Institute of Technology',
-    duration: 'Jul 2024 – May 2025 [Expected]',
+    duration: 'Jul 2023 – May 2025 [Expected]',
     gpa: '8.5',
     coursework: [
       'Information Security',
