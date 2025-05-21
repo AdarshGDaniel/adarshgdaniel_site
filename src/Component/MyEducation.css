@@ -1,0 +1,20 @@
+#education{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 2rem;
+    padding-bottom: 50px;
+}
+
+.small-icon-edu{
+    margin: 2px !important;
+    transform: translateY(0px);
+    border: 1px solid #ff005527 !important;
+    transition: all 0.2s ease-in-out !important;
+}
+
+.small-icon-edu:hover{
+    transform: translateY(-5px);
+    transition: all 0.2s ease-in-out;
+}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import img from '../assets/IMG_6053 copy.png';
 import { useMediaQuery, useTheme, Box } from '@mui/material';
+import ScrollFadeIn from '../Component/ScrollFadeIn.jsx';
 
 const words = ['I Code', 'I Create', 'I Design', 'I shoot', 'I Edit'];
 
@@ -33,6 +34,7 @@ function Home() {
       }}
     >
       {/* Image section */}
+      
       <Box
         sx={{
           flex: 1,
@@ -42,16 +44,19 @@ function Home() {
           alignItems: 'center',
         }}
       >
+      <ScrollFadeIn delay={0.2}>
         <img
-          src={img}
-          alt="Adarsh"
-          style={{
-            width: isMobile ? '100%' : 'auto',
-            minHeight: isMobile ? '20vh' : '500px',
-            maxHeight: isMobile ? '100vh' : '500px',
-            objectFit: 'cover',
-          }}
-        />
+            src={img}
+            alt="Adarsh"
+            style={{
+              width: isMobile ? '100%' : 'auto',
+              minHeight: isMobile ? '20vh' : '500px',
+              maxHeight: isMobile ? '100vh' : '500px',
+              objectFit: 'cover',
+            }}
+          />
+      </ScrollFadeIn>
+
       </Box>
 
       {/* Text section */}
@@ -64,20 +69,26 @@ function Home() {
           position: 'relative',
         }}
       >
+      <ScrollFadeIn delay={0.4}>
         <p className="under-construction">⚠ Page under construction! ⚠</p>
+      </ScrollFadeIn>
+      <ScrollFadeIn delay={0.5}>
         <h1 className="name-line">
-          Hi, the name's{' '}
-          <b className="name-glitch" data-text="Adarsh G Daniel">
-            Adarsh G Daniel
-          </b>
-        </h1>
+            Hi, the name's{' '}
+            <b className="name-glitch" data-text="Adarsh G Daniel">
+              Adarsh G Daniel
+            </b>
+          </h1>
+      </ScrollFadeIn>
+      <ScrollFadeIn delay={0.6}>
         <div className="dynamic-text">
-          {words.map((word, i) => (
-            <p key={i} className={`dynamic-line ${i === index ? 'active' : ''}`}>
-              {word}
-            </p>
-          ))}
-        </div>
+            {words.map((word, i) => (
+              <p key={i} className={`dynamic-line ${i === index ? 'active' : ''}`}>
+                {word}
+              </p>
+            ))}
+          </div>
+      </ScrollFadeIn>
       </Box>
     </Box>
   );

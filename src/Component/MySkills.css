@@ -1,0 +1,37 @@
+.main-box-skills{
+    text-align: center;
+}
+.main-box-skills h6{
+    transform: translateY(50px);
+    z-index: 3;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    font-weight: bolder;
+}
+
+.main-box-skills:hover h6{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.components-skills div{
+    z-index: 1;
+    background-color: #ff0055;
+    color: white;
+    box-shadow: none;
+}
+.components-skills div:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    box-shadow: 0px 4px 35px -5px rgba(255, 0, 85, 0.856);
+}
+.main-box-skills{
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+}
+.main-box-skills:hover{
+    padding: 10px;
+    transition: all 0.5s ease-in-out;
+}

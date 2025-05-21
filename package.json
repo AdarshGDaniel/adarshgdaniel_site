@@ -18,8 +18,11 @@
     "@mui/icons-material": "^7.1.0",
     "@mui/material": "^7.1.0",
     "adarshgdaniel-site": "file:",
+    "framer-motion": "^12.12.1",
+    "keen-slider": "^6.8.6",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-intersection-observer": "^9.16.0",
     "react-scroll": "^1.9.3"
   },
   "devDependencies": {

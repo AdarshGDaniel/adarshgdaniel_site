@@ -70,7 +70,7 @@ function Navbar({ mode, toggleTheme }) {
                     key={page}
                     to={pageId}
                     smooth={true}
-                    duration={500}
+                    duration={150}
                     offset={-90}
                     spy={true}
                     href={`#${pageId}`}
@@ -130,20 +130,24 @@ function Navbar({ mode, toggleTheme }) {
             <CloseIcon />
           </IconButton>
 
-          {pages.map((page) => (
-            <ScrollLink
-              key={page}
-              to={page}
-              smooth={true}
-              duration={500}
-              offset={-90}
-              spy={true}
-              style={navItemStyles}
-              onClick={() => setMenuOpen(false)} // 👈 closes modal
-            >
-              {page}
-            </ScrollLink>
-          ))}
+          {pages.map((page) => {
+            const pageId = page.toLowerCase();
+            return (
+              <ScrollLink
+                key={page}
+                to={pageId}
+                smooth={true}
+                duration={150}
+                href={`#${pageId}`}
+                offset={-90}
+                spy={true}
+                style={navItemStyles}
+                onClick={() => setMenuOpen(false)}
+              >
+                {page}
+              </ScrollLink>
+            );
+          })}
         </Box>
       </Modal>
     </>

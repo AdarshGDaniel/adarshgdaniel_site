@@ -4,6 +4,11 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
+::selection {
+  background: #ff0055; /* highlight background color */
+  color: white;         /* highlighted text color */
+}
+
 .nav-bar{
   position: "static";
   color: "red";
@@ -32,7 +37,7 @@
 .nav-items a:hover{
   transform: translateY(-2px);
   transition: all 0.2s ease-in-out;
-  color: #ff0055 !important;
+  color: #ff0055 !important;  
 }
 
 .nav-items a:active{
@@ -46,6 +51,7 @@
   transition: all 0.4s ease-in-out;
   background-color: #00000017;
   user-select: none;
+  background-image: url();
 }
 
 .pop-up-ham a:hover{
@@ -65,3 +71,4 @@
 .arrow-about:active{
   color: #ff0055 !important;
 }
+
