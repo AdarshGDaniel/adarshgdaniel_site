@@ -86,28 +86,28 @@ function Certifications() {
                 margin: '2px',
                 marginLeft: isMobile ? '20px' : '0px',
                 marginRight: isMobile ? '20px' : '0px',
-                bgcolor: '#252525',
-                boxShadow: 4,
+                boxShadow: 'none',
+                border: '1px solid rgba(255, 0, 85, 0.192)',
                 borderRadius: 2,
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  boxShadow: '0 0 15px 2px #ff0055',
+                  boxShadow: '-1px 1px 8px 4px rgba(255, 0, 85, 0.41)',
                   transform: 'translateY(-5px)',
                 },
               }}
             >
               <CardContent>
                 <Box display="flex" justifyContent="center" mb={2}>
-                  <Box sx={{ bgcolor: 'rgba(197, 34, 88, 0.1)', borderRadius: '50%', p: 1 }}>
+                  <Box sx={{ borderRadius: '50%', p: 1 }}>
                     <EmojiEventsIcon sx={{ color: '#ff0055', fontSize: 24 }} />
                   </Box>
                 </Box>
                 <Typography
                   variant="body1"
-                  color="white"
                   align="center"
                   fontWeight="bold"
-                  sx={{ mb: 1 }}
+                  sx={{ mb: 1}}
+                  style={{color: theme.palette.mode === 'dark' ? 'white' : 'grey'}}
                 >
                   {cert.title}
                 </Typography>
@@ -129,10 +129,12 @@ function Certifications() {
                       size="small"
                       variant="outlined"
                       sx={{
-                        color: '#ff0055',
-                        borderColor: '#ff0055',
+                        color: theme.palette.mode === 'dark' ? '#ff0055' : '#ffff' ,
+                        bgcolor: theme.palette.mode === 'dark' ? 'none' : '#ff0055' ,
+                        borderColor: theme.palette.mode === 'dark' ? '#ff0055' : '#ff0055' ,
                         '&:hover': {
-                          bgcolor: '#ff0055',
+                          bgcolor: theme.palette.mode === 'dark' ? '#ff0055' : '#c50042',
+                          borderColor: theme.palette.mode === 'dark' ? '#ff0055' : '#c50042' ,
                           color: 'white',
                         },
                       }}

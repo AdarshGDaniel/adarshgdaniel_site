@@ -86,11 +86,12 @@ export default function MyEducation() {
               sx={{
                 borderRadius: 3,
                 backgroundColor: theme.palette.mode === 'dark' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)',
-                boxShadow: '-1px 1px 10px 2px rgba(255, 0, 76, 0.47)',
+                border: '1px solid rgba(255, 0, 85, 0.192)',
                 position: 'relative',
                 overflow: 'hidden',
                 transform: 'translateY(0px)',
                 transition: 'all 0.2s ease-in-out',
+                boxShadow: 'none',
                 '&:hover': {
                   boxShadow: '0px 4px 35px -5px rgba(255, 0, 85, 0.856)',
                   cursor: 'pointer',
@@ -106,7 +107,17 @@ export default function MyEducation() {
                   left: 0,
                   top: 0,
                   bottom: 0,
-                  width: 2,
+                  width: 5,
+                  backgroundColor: 'rgba(255, 0, 85)',
+                }}
+              />
+              <Box
+                sx={{
+                  position: 'absolute',
+                  right: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: 5,
                   backgroundColor: 'rgba(255, 0, 85)',
                 }}
               />

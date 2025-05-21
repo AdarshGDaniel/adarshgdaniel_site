@@ -91,7 +91,6 @@ function ProjectCarousel() {
         </Typography>
     </ScrollFadeIn>
 
-      <ScrollFadeIn delay={0.2}>
         <Box
           component="section"
           sx={{
@@ -142,9 +141,11 @@ function ProjectCarousel() {
           </IconButton>
 
           {/* Carousel Container */}
-          <Box className='carousel-main' sx={{ maxWidth: 900, width: '100%' }}>
+          <ScrollFadeIn delay={0.2}>
+          <Box className='carousel-main' sx={{ maxWidth: 900, width: '100%', }}>
             <Box ref={sliderRef} className="keen-slider" sx={{ overflow: 'hidden' }}>
               {projectslist.map((project, idx) => (
+                <Box key={`1 ${idx}`}>
                 <Box
                   key={idx}
                   className="keen-slider__slide carousel-main"
@@ -152,16 +153,32 @@ function ProjectCarousel() {
                     display: 'flex',
                     gap: 2,
                     height: 550,
-                    bgcolor: '#ff0055',
-                    borderRadius: 2,
                     overflow: 'hidden',
-                    boxShadow: 3,
                     flex: 1,
-                    backgroundImage: `url(${project.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
                   }}
                 >
+                <ScrollFadeIn delay={0.3}>
+                <img
+                src={project.image}
+                style={{
+                  width: 'auto',
+                  height: '300px',
+                  margin: '20px',
+                  position: 'absolute'
+                  }}>
+
+                </img>
+                </ScrollFadeIn>
+
+                <Typography
+                className='inText'
+                  variant="h4"
+                  align="center"
+                  fontWeight="bold"
+                  sx={{ mb: 6, position: 'absolute' }}
+                >
+                  It's <span style={{ color: '#ff0055' }}>{project.title1}</span>
+                </Typography>
 
                   {/* Right content */}
                   <Box className='carousel-text'
@@ -175,6 +192,7 @@ function ProjectCarousel() {
                   >
                     {/* Top right card */}
                     <Box
+                    className='carousel-skill-outer'
                       sx={{
                         position: 'absolute',
                         top: 16,
@@ -191,10 +209,7 @@ function ProjectCarousel() {
                           key={index}
                           className="carousel-skill"
                           sx={{
-                            bgcolor: 'rgba(0,0,0,0.5)',
-                            color: 'white',
                             borderRadius: 10,
-                            backdropFilter: 'blur(4px)',
                             fontSize: '0.9rem',
                             whiteSpace: 'nowrap',
                           }}
@@ -217,8 +232,6 @@ function ProjectCarousel() {
                       <Box className='carousel-detail-text'
                         sx={{
                           mt: 'auto',
-                          bgcolor: 'rgba(0,0,0,0.6)',
-                          color: 'white',
                           p: 2,
                           borderRadius: 1,
                           backdropFilter: 'blur(6px)',
@@ -234,8 +247,6 @@ function ProjectCarousel() {
                       <Box className='carousel-detail-text'
                         sx={{
                           mt: 'auto',
-                          bgcolor: 'rgba(0,0,0,0.6)',
-                          color: 'white',
                           p: 2,
                           borderRadius: 1,
                           backdropFilter: 'blur(6px)',
@@ -251,6 +262,7 @@ function ProjectCarousel() {
                     </Box>
                     
                   </Box>
+                </Box>
                 </Box>
               ))}
             </Box>
@@ -280,8 +292,8 @@ function ProjectCarousel() {
               ))}
             </Box>
           </Box>
+          </ScrollFadeIn>
         </Box>
-      </ScrollFadeIn>
     </Box>
     <ScrollableThumbnails />
     </>
