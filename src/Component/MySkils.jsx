@@ -9,6 +9,7 @@ const skills = {
     { name: 'C++', icon: '⚙️' },
     { name: 'SQL', icon: '💾' },
     { name: 'TensorFlow', icon: '🧠' },
+    { name: 'ReactJS', icon: '✉️' },
     { name: 'JavaScript', icon: '📄' },
     { name: 'Linux', icon: '🐧' },
     { name: 'DPDK', icon: '⌨️' },
