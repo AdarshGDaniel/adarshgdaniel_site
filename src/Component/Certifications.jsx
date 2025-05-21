@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Card, CardContent, Typography, IconButton, Button } from '@mui/material';
+import { Box, Grid, Card, CardContent, Typography, IconButton, Button, useTheme, useMediaQuery } from '@mui/material';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ScrollFadeIn from '../Component/ScrollFadeIn.jsx';
@@ -58,6 +58,8 @@ const certifications = [
 ];
 
 function Certifications() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   return (
     <Box id="certifications" sx={{ py: 10, }}>
       <Box sx={{ textAlign: 'center', mb: 6 }}>
@@ -81,6 +83,9 @@ function Certifications() {
             <Card
               sx={{
                 height: '100%',
+                margin: '2px',
+                marginLeft: isMobile ? '20px' : '0px',
+                marginRight: isMobile ? '20px' : '0px',
                 bgcolor: '#252525',
                 boxShadow: 4,
                 borderRadius: 2,

@@ -69,8 +69,11 @@ function Home() {
           position: 'relative',
         }}
       >
-      <ScrollFadeIn delay={0.4}>
+      {/* <ScrollFadeIn delay={0.4}>
         <p className="under-construction">⚠ Page under construction! ⚠</p>
+      </ScrollFadeIn> */}
+      <ScrollFadeIn delay={0.4}>
+        <p className="under-construction">💥Welcome to my Page | Get to know more about me!🎉</p>
       </ScrollFadeIn>
       <ScrollFadeIn delay={0.5}>
         <h1 className="name-line">

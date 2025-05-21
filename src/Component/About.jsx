@@ -10,6 +10,7 @@ import ScrollFadeIn from '../Component/ScrollFadeIn.jsx';
 function About() {
 
     const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
 
 
@@ -17,7 +18,8 @@ function About() {
     <Box
       id="about"
       sx={{
-        minHeight: "80vh",
+        minHeight: "100%",
+        paddingTop: isMobile ? "0" : "120px",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
@@ -31,7 +33,7 @@ function About() {
         <Box
             sx={{
             position: "absolute",
-            top: -20,
+            top: isMobile ? '-100px' : -20,
             animation: "bounce 2s infinite",
             cursor: "pointer",
             "@keyframes bounce": {
