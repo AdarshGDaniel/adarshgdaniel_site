@@ -19,7 +19,7 @@ import ScrollFadeIn from '../Component/ScrollFadeIn.jsx';
 
 const educations = [
   {
-    degree: 'M. Tech in Information Security',
+    degree: 'M. Tech. in Information Security',
     institution: 'Vellore Institute of Technology',
     duration: 'Jul 2023 – May 2025 [Expected]',
     gpa: '8.5',
@@ -31,7 +31,7 @@ const educations = [
     ],
   },
   {
-    degree: 'BTech in Computer Science and Engineering',
+    degree: 'B. Tech. in Computer Science and Engineering',
     institution: 'Karunya Institute of Technology and Sciences',
     duration: 'Aug 2019 – May 2023',
     gpa: '7.5',
