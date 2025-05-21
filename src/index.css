@@ -1,7 +1,6 @@
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   scroll-behavior: smooth;
-  background-color: #0c0c0c !important;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -61,4 +60,8 @@
   border: #ff0055 solid 2px;
   border-style: dashed;
   opacity: 0.8;
+}
+
+.arrow-about:active{
+  color: #ff0055 !important;
 }

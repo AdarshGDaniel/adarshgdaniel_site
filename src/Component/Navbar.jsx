@@ -62,21 +62,25 @@ function Navbar({ mode, toggleTheme }) {
 
           {/* Desktop Nav */}
           {!isMobile && (
-            <Box className='nav-items' sx={{ display: 'flex', gap: 10 }}>
-              {pages.map((page) => (
-                <ScrollLink
-                  key={page}
-                  to={page}
-                  smooth={true}
-                  duration={500}
-                  offset={-90}
-                  spy={true}
-                  style={navItemStyles}
-                  activeClass="active"
-                >
-                  {page}
-                </ScrollLink>
-              ))}
+            <Box className="nav-items" sx={{ display: 'flex', gap: 10 }}>
+              {pages.map((page) => {
+                const pageId = page.toLowerCase();
+                return (
+                  <ScrollLink
+                    key={page}
+                    to={pageId}
+                    smooth={true}
+                    duration={500}
+                    offset={-90}
+                    spy={true}
+                    href={`#${pageId}`}
+                    style={navItemStyles}
+                    activeClass="active"
+                  >
+                    {page}
+                  </ScrollLink>
+                );
+              })}
             </Box>
           )}
 

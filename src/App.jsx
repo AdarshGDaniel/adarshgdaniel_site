@@ -4,6 +4,7 @@ import { ThemeProvider, CssBaseline, Container } from '@mui/material';
 import { lightTheme, darkTheme } from './Component/Theme.jsx';
 import Navbar from './Component/Navbar.jsx';
 import Home from './Component/Home.jsx';
+import About from './Component/About.jsx';
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -18,10 +19,16 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Navbar mode={mode} toggleTheme={toggleTheme} />
-      <Container sx={{ mt: 4 }}>
-        {/* Page content can go here */}
-      </Container>
-      <Home />
+      {/* <Container className='main-box' sx={{ mt: 4 }}>
+        <Home />
+        <About />
+      </Container> */}
+
+      <>
+        <Home />
+        <About />
+      </>
+      
     </ThemeProvider>
   );
 }
