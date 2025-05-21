@@ -7,11 +7,13 @@
   
   .carousel-box{
     background-color: none !important;
+    margin: 20px;
   }
 
   .keen-slider{
     min-height: 600px;
     height: 100% !important;
+    width: 100% !important;
   }
 
  .carousel-detail-text{
@@ -74,3 +76,72 @@
     transition: all 0.2s ease-in-out;
     text-shadow: 1px 2px 4px rgba(255, 0, 85, 0.6);
   }
+
+  .dot-mobile{
+    position: absolute;
+    bottom: 0;
+  }
+
+  .mobile-img{
+    border-radius: 5px;
+    border: 3px dotted rgba(255, 0, 85);
+    transition: all 0.2s ease-in-out;
+    z-index: 2;
+  }
+  .mobile-img:hover{
+    transform: translateY(5px) !important;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: -1px 1px 8px 4px rgba(255, 0, 85, 0.41);
+  }
+
+  .mobile-cont{
+    border: 1px solid rgba(255, 0, 85, 0.192);
+    margin: 10px;
+    transition: all 0.2s ease-in-out;
+    z-index: 3;
+    padding: 10px;
+  }
+  .mobile-cont:hover{
+    transform: translateY(-5px);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    box-shadow: -1px 1px 8px 4px rgba(255, 0, 85, 0.41);
+  }
+
+  .mobile-h6{
+    color: rgba(255, 0, 85);
+    z-index: 2;
+    transition: all 0.2s ease-in-out;
+  }
+  .mobile-h6:hover{
+    transform: translateY(-5px) !important;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-shadow: 1px 2px 4px rgba(255, 0, 85, 0.6);
+  }
+
+  .mobile-skill{
+    width: auto;
+    text-align: center;
+    border: 1px solid rgba(255, 0, 85, 0.192);
+    border-radius: 10px;
+    margin: 5px !important;
+    padding: 5px 10px 5px 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .mobile-skill:hover{
+    transform: translateY(-5px);
+    cursor: pointer;
+    box-shadow: -1px 1px 8px 4px rgba(255, 0, 85, 0.41);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .mobile-skill-parent{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly !important;
+  }
+

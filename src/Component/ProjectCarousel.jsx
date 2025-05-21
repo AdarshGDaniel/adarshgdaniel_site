@@ -141,158 +141,222 @@ function ProjectCarousel() {
           </IconButton>
 
           {/* Carousel Container */}
-          <ScrollFadeIn delay={0.2}>
-          <Box className='carousel-main' sx={{ maxWidth: 900, width: '100%', }}>
-            <Box ref={sliderRef} className="keen-slider" sx={{ overflow: 'hidden' }}>
-              {projectslist.map((project, idx) => (
-                <Box key={`1 ${idx}`}>
-                <Box
-                  key={idx}
-                  className="keen-slider__slide carousel-main"
-                  sx={{
-                    display: 'flex',
-                    gap: 2,
-                    height: 550,
-                    overflow: 'hidden',
-                    flex: 1,
-                  }}
-                >
-                <ScrollFadeIn delay={0.3}>
-                <img
-                src={project.image}
-                style={{
-                  width: 'auto',
-                  height: '300px',
-                  margin: '20px',
-                  position: 'absolute'
-                  }}>
-
-                </img>
-                </ScrollFadeIn>
-
-                <Typography
-                className='inText'
-                  variant="h4"
-                  align="center"
-                  fontWeight="bold"
-                  sx={{ mb: 6, position: 'absolute' }}
-                >
-                  It's <span style={{ color: '#ff0055' }}>{project.title1}</span>
-                </Typography>
-
-                  {/* Right content */}
-                  <Box className='carousel-text'
-                    sx={{
-                      flex: 1,
-                      position: 'relative',
-                      p: 2,
-                      display: 'flex',
-                      flexDirection: 'column',
-                    }}
-                  >
-                    {/* Top right card */}
-                    <Box
-                    className='carousel-skill-outer'
-                      sx={{
-                        position: 'absolute',
-                        top: 16,
-                        right: 16,
-                        maxWidth: '80%',
-                        display: 'flex',
-                        gap: 1, // space between the skill tags
-                        flexWrap: 'wrap',
-                        justifyContent: 'flex-end',
-                      }}
-                    >
-                      {project.shortDesc.split(',').map((skill, index) => (
-                        <Box
-                          key={index}
-                          className="carousel-skill"
-                          sx={{
-                            borderRadius: 10,
-                            fontSize: '0.9rem',
-                            whiteSpace: 'nowrap',
-                          }}
-                        >
-                          {skill.trim()}
+          {isMobile ? (
+            <>
+              <Box ref={sliderRef} className="keen-slider mobile-main" sx={{ width: '100%' }}>
+                {projectslist.map((project, idx) => (
+                  <Box key={idx} className="keen-slider__slide mobile-main2" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: 2 }}>
+                    <Box className='mobile-img' component="img" src={project.image} alt={project.title1} sx={{ width: '100%', height: 'auto', borderRadius: 2, mb: 2 }} />
+                    <Box sx={{ flex: 1 }}>
+                    <Box className='mobile-skill-parent' style={{justifyContent: 'space-between'}}>
+                          {project.shortDesc.split(',').map((skill, index) => (
+                            <Typography key={index} className='mobile-skill' variant="body2" sx={{whiteSpace: 'nowrap'}} color="text.secondary" gutterBottom>
+                              {skill.trim()}
+                            </Typography>
+                          ))}
                         </Box>
-                      ))}
-                    </Box>
-
-
-                    {/* Bottom right card */}
-                    <Box className='carousel-blur-box'
-                        sx={{
-                          mt: 'auto',
-                          display: 'flex',
-                          flexDirection: isMobile ? 'column' : 'row',
-                          justifyContent: 'space-evenly'
-                        }}
-                        >
-                      <Box className='carousel-detail-text'
-                        sx={{
-                          mt: 'auto',
-                          p: 2,
-                          borderRadius: 1,
-                          backdropFilter: 'blur(6px)',
-                          fontSize: '1rem',
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        <Typography variant="h6" sx={{ mb: 1 }}>
+                      <Box component="div" className='mobile-cont'>
+                        <Typography className='mobile-h6' variant="h6" fontWeight="bold" gutterBottom>
                           {project.title1}
                         </Typography>
-                        <Typography>{project.description1}</Typography>
+
+                        <Typography variant="body1" gutterBottom>
+                          {project.description1}
+                        </Typography>
                       </Box>
-                      <Box className='carousel-detail-text'
-                        sx={{
-                          mt: 'auto',
-                          p: 2,
-                          borderRadius: 1,
-                          backdropFilter: 'blur(6px)',
-                          fontSize: '1rem',
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        <Typography variant="h6" sx={{ mb: 1 }}>
+                      <Box component="div" className='mobile-cont'>
+                        <Typography variant="subtitle1" color='rgba(255, 0, 85)' fontWeight="bold" mt={2}>
                           {project.title2}
                         </Typography>
-                        <Typography>{project.description2}</Typography>
+                        <Typography variant="body1">
+                          {project.description2}
+                        </Typography>
                       </Box>
                     </Box>
-                    
                   </Box>
-                </Box>
-                </Box>
-              ))}
-            </Box>
+                ))}
+              </Box>
 
-            {/* Pagination Squares */}
-            <Box
-              sx={{
-                mt: 3,
-                display: 'flex',
-                justifyContent: 'center',
-                gap: 1.5,
-              }}
-            >
-              {projectslist.map((_, idx) => (
+              {/* Mobile pagination dots */}
+              <Box className='dot-mobile' sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 1.5 }}>
+                {projectslist.map((_, idx) => (
+                  <Box
+                    key={idx}
+                    onClick={() => {
+                      const slider = instanceRef.current;
+                      if (!slider) return;
+                      const current = slider.track.details.rel;
+                      const abs = slider.track.details.slides[0].abs;
+                      slider.moveToIdx(idx + abs - current);
+                    }}
+                    sx={{
+                      width: 12,
+                      height: 12,
+                      borderRadius: 1,
+                      bgcolor: currentSlide === idx ? '#ff0055' : 'grey.400',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.3s',
+                    }}
+                  />
+                ))}
+              </Box>
+            </>
+
+          ) : (
+            <ScrollFadeIn delay={0.2}>
+              <Box className='carousel-main' sx={{ maxWidth: 900, width: '100%', }}>
+                <Box ref={sliderRef} className="keen-slider" sx={{ overflow: 'hidden' }}>
+                  {projectslist.map((project, idx) => (
+                    <Box key={`1 ${idx}`}>
+                    <Box
+                      key={idx}
+                      className="keen-slider__slide carousel-main"
+                      sx={{
+                        display: 'flex',
+                        gap: 2,
+                        height: 550,
+                        overflow: 'hidden',
+                        flex: 1,
+                      }}
+                    >
+                    <ScrollFadeIn delay={0.3}>
+                    <img
+                    src={project.image}
+                    style={{
+                      width: 'auto',
+                      height: '300px',
+                      margin: '20px',
+                      position: 'absolute'
+                      }}>
+
+                    </img>
+                    </ScrollFadeIn>
+
+                    <Typography
+                    className='inText'
+                      variant="h4"
+                      align="center"
+                      fontWeight="bold"
+                      sx={{ mb: 6, position: 'absolute' }}
+                    >
+                      It's <span style={{ color: '#ff0055' }}>{project.title1}</span>
+                    </Typography>
+
+                      {/* Right content */}
+                      <Box className='carousel-text'
+                        sx={{
+                          flex: 1,
+                          position: 'relative',
+                          p: 2,
+                          display: 'flex',
+                          flexDirection: 'column',
+                        }}
+                      >
+                        {/* Top right card */}
+                        <Box
+                        className='carousel-skill-outer'
+                          sx={{
+                            position: 'absolute',
+                            top: 16,
+                            right: 16,
+                            maxWidth: '80%',
+                            display: 'flex',
+                            gap: 1, // space between the skill tags
+                            flexWrap: 'wrap',
+                            justifyContent: 'flex-end',
+                          }}
+                        >
+                          {project.shortDesc.split(',').map((skill, index) => (
+                            <Box
+                              key={index}
+                              className="carousel-skill"
+                              sx={{
+                                borderRadius: 10,
+                                fontSize: '0.9rem',
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              {skill.trim()}
+                            </Box>
+                          ))}
+                        </Box>
+
+
+                        {/* Bottom right card */}
+                        <Box className='carousel-blur-box'
+                            sx={{
+                              mt: 'auto',
+                              display: 'flex',
+                              flexDirection: isMobile ? 'column' : 'row',
+                              justifyContent: 'space-evenly'
+                            }}
+                            >
+                          <Box className='carousel-detail-text'
+                            sx={{
+                              mt: 'auto',
+                              p: 2,
+                              borderRadius: 1,
+                              backdropFilter: 'blur(6px)',
+                              fontSize: '1rem',
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            <Typography variant="h6" sx={{ mb: 1 }}>
+                              {project.title1}
+                            </Typography>
+                            <Typography>{project.description1}</Typography>
+                          </Box>
+                          <Box className='carousel-detail-text'
+                            sx={{
+                              mt: 'auto',
+                              p: 2,
+                              borderRadius: 1,
+                              backdropFilter: 'blur(6px)',
+                              fontSize: '1rem',
+                              lineHeight: 1.4,
+                            }}
+                          >
+                            <Typography variant="h6" sx={{ mb: 1 }}>
+                              {project.title2}
+                            </Typography>
+                            <Typography>{project.description2}</Typography>
+                          </Box>
+                        </Box>
+                        
+                      </Box>
+                    </Box>
+                    </Box>
+                  ))}
+                </Box>
+
+                {/* Pagination Squares */}
                 <Box
-                  key={idx}
-                  onClick={() => instanceRef.current?.moveToIdx(idx)}
                   sx={{
-                    width: 14,
-                    height: 14,
-                    borderRadius: 1,
-                    bgcolor: currentSlide === idx ? '#ff0055' : 'grey.400',
-                    cursor: 'pointer',
-                    transition: 'background-color 0.3s',
+                    mt: 3,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: 1.5,
                   }}
-                />
-              ))}
-            </Box>
-          </Box>
-          </ScrollFadeIn>
+                >
+                  {projectslist.map((_, idx) => (
+                    <Box
+                      key={idx}
+                      onClick={() => instanceRef.current?.moveToIdx(idx)}
+                      sx={{
+                        width: 14,
+                        height: 14,
+                        borderRadius: 1,
+                        bgcolor: currentSlide === idx ? '#ff0055' : 'grey.400',
+                        cursor: 'pointer',
+                        transition: 'background-color 0.3s',
+                      }}
+                    />
+                  ))}
+                </Box>
+              </Box>
+              </ScrollFadeIn>
+          )}
+          
         </Box>
     </Box>
     <ScrollableThumbnails />
