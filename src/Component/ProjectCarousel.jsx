@@ -9,6 +9,7 @@ import ScrollFadeIn from '../Component/ScrollFadeIn.jsx';
 
 // Import images
 import img1 from '../assets/Godseye.png'; import img2 from '../assets/khacks.png'; import img3 from '../assets/COVID.jpeg'; import img4 from '../assets/DNS.png';
+import ScrollableThumbnails from './ScrollableThumbnails.jsx';
 
 function ProjectCarousel() {
   const images = [img1, img2, img3];
@@ -77,7 +78,8 @@ function ProjectCarousel() {
   }, [instanceRef]);
 
   return (
-    <Box id='projects'>
+    <>
+<Box id='projects'>
     <ScrollFadeIn delay={0.2}>
       <Typography
           variant="h4"
@@ -281,6 +283,9 @@ function ProjectCarousel() {
         </Box>
       </ScrollFadeIn>
     </Box>
+    <ScrollableThumbnails />
+    </>
+    
   );
 }
 
