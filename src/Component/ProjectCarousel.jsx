@@ -152,7 +152,7 @@ function ProjectCarousel() {
                     <Box sx={{ flex: 1 }}>
                     <Box className='mobile-skill-parent' style={{justifyContent: 'space-between'}}>
                           {project.shortDesc.split(',').map((skill, index) => (
-                            <ScrollFadeIn delay={0.3}>
+                            <ScrollFadeIn key={`1 ${index}`} delay={0.3}>
                             <Typography key={index} className='mobile-skill' variant="body2" sx={{whiteSpace: 'nowrap'}} color="text.secondary" gutterBottom>
                               {skill.trim()}
                             </Typography>

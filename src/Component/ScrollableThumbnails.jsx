@@ -222,52 +222,55 @@ const ScrollableThumbnails = () => {
         >
           {items.map((item, idx) => (
             <ScrollFadeIn delay={0.2} key={idx}>
-              <Card
-                sx={{
-                  minWidth: 250,
-                  maxWidth: 250,
-                  bgcolor: '#ff0055',
-                  color: 'white',
-                  borderRadius: 2,
-                  boxShadow: 'none',
-                  flex: '0 0 auto',
-                  transition: 'transform 0.3s ease',
-                  '&:hover': {
-                    transform: 'scale(1.03)',
-                    boxShadow: '0 0 10px #ff0055',
-                  },
-                }}
-              >
-                <CardActionArea
-                  component="a"
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={handleClick}
+              <div className="card-border-wrapper">
+                <Card
+                  sx={{
+                    minWidth: 250,
+                    maxWidth: 250,
+                    bgcolor: '#ff0055',
+                    color: 'white',
+                    borderRadius: 2,
+                    boxShadow: 'none',
+                    flex: '0 0 auto',
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                      transform: 'scale(1.03)',
+                      boxShadow: '0 0 10px #ff0055',
+                    },
+                  }}
                 >
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={item.thumbnail}
-                    alt={item.title}
-                  />
-                  <CardContent>
-                    <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
-                      <Typography variant="subtitle1" fontWeight="bold" noWrap>
-                        {item.title}
+                  <CardActionArea
+                    component="a"
+                    href={item.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={handleClick}
+                  >
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={item.thumbnail}
+                      alt={item.title}
+                    />
+                    <CardContent>
+                      <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
+                        <Typography variant="subtitle1" fontWeight="bold" noWrap>
+                          {item.title}
+                        </Typography>
+                        <Tooltip title={item.type === 'video' ? 'Video' : 'Website'}>
+                          <IconButton size="small" sx={{ color: '#fff' }}>
+                            {item.type === 'video' ? <YouTubeIcon /> : <LanguageIcon />}
+                          </IconButton>
+                        </Tooltip>
+                      </Box>
+                      <Typography variant="body2" color="rgba(245, 245, 245, 0.603)">
+                        {item.description}
                       </Typography>
-                      <Tooltip title={item.type === 'video' ? 'Video' : 'Website'}>
-                        <IconButton size="small" sx={{ color: '#fff' }}>
-                          {item.type === 'video' ? <YouTubeIcon /> : <LanguageIcon />}
-                        </IconButton>
-                      </Tooltip>
-                    </Box>
-                    <Typography variant="body2" color="rgba(245, 245, 245, 0.603)">
-                      {item.description}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </div>
+
             </ScrollFadeIn>
           ))}
         </Box>
