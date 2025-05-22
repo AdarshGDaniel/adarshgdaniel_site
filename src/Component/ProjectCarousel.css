@@ -135,6 +135,7 @@
     transform: translateY(-5px);
     cursor: pointer;
     box-shadow: -1px 1px 8px 4px rgba(255, 0, 85, 0.41);
+    color: rgba(245, 245, 245, 0.603);
     transition: all 0.2s ease-in-out;
   }
 

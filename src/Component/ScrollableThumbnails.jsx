@@ -226,10 +226,10 @@ const ScrollableThumbnails = () => {
                 sx={{
                   minWidth: 250,
                   maxWidth: 250,
-                  bgcolor: '#252525',
+                  bgcolor: '#ff0055',
                   color: 'white',
                   borderRadius: 2,
-                  boxShadow: 3,
+                  boxShadow: 'none',
                   flex: '0 0 auto',
                   transition: 'transform 0.3s ease',
                   '&:hover': {
@@ -257,12 +257,12 @@ const ScrollableThumbnails = () => {
                         {item.title}
                       </Typography>
                       <Tooltip title={item.type === 'video' ? 'Video' : 'Website'}>
-                        <IconButton size="small" sx={{ color: '#ff0055' }}>
+                        <IconButton size="small" sx={{ color: '#fff' }}>
                           {item.type === 'video' ? <YouTubeIcon /> : <LanguageIcon />}
                         </IconButton>
                       </Tooltip>
                     </Box>
-                    <Typography variant="body2" color="gray">
+                    <Typography variant="body2" color="rgba(245, 245, 245, 0.603)">
                       {item.description}
                     </Typography>
                   </CardContent>
