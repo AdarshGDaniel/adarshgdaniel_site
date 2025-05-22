@@ -146,15 +146,20 @@ function ProjectCarousel() {
               <Box ref={sliderRef} className="keen-slider mobile-main" sx={{ width: '100%' }}>
                 {projectslist.map((project, idx) => (
                   <Box key={idx} className="keen-slider__slide mobile-main2" sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', px: 2 }}>
+                  <ScrollFadeIn delay={0.2}>
                     <Box className='mobile-img' component="img" src={project.image} alt={project.title1} sx={{ width: '100%', height: 'auto', borderRadius: 2, mb: 2 }} />
+                    </ScrollFadeIn>
                     <Box sx={{ flex: 1 }}>
                     <Box className='mobile-skill-parent' style={{justifyContent: 'space-between'}}>
                           {project.shortDesc.split(',').map((skill, index) => (
+                            <ScrollFadeIn delay={0.3}>
                             <Typography key={index} className='mobile-skill' variant="body2" sx={{whiteSpace: 'nowrap'}} color="text.secondary" gutterBottom>
                               {skill.trim()}
                             </Typography>
+                            </ScrollFadeIn>
                           ))}
                         </Box>
+                        <ScrollFadeIn delay={0.4}>
                       <Box component="div" className='mobile-cont'>
                         <Typography className='mobile-h6' variant="h6" fontWeight="bold" gutterBottom>
                           {project.title1}
@@ -164,6 +169,8 @@ function ProjectCarousel() {
                           {project.description1}
                         </Typography>
                       </Box>
+                      </ScrollFadeIn>
+                      <ScrollFadeIn delay={0.5}>
                       <Box component="div" className='mobile-cont'>
                         <Typography variant="subtitle1" color='rgba(255, 0, 85)' fontWeight="bold" mt={2}>
                           {project.title2}
@@ -172,6 +179,7 @@ function ProjectCarousel() {
                           {project.description2}
                         </Typography>
                       </Box>
+                      </ScrollFadeIn>
                     </Box>
                   </Box>
                 ))}
@@ -267,6 +275,7 @@ function ProjectCarousel() {
                           }}
                         >
                           {project.shortDesc.split(',').map((skill, index) => (
+                            <ScrollFadeIn delay={0.4}>
                             <Box
                               key={index}
                               className="carousel-skill"
@@ -278,6 +287,7 @@ function ProjectCarousel() {
                             >
                               {skill.trim()}
                             </Box>
+                            </ScrollFadeIn>
                           ))}
                         </Box>
 
@@ -291,6 +301,7 @@ function ProjectCarousel() {
                               justifyContent: 'space-evenly'
                             }}
                             >
+                            <ScrollFadeIn delay={0.5}>
                           <Box className='carousel-detail-text'
                             sx={{
                               mt: 'auto',
@@ -306,6 +317,8 @@ function ProjectCarousel() {
                             </Typography>
                             <Typography>{project.description1}</Typography>
                           </Box>
+                          </ScrollFadeIn>
+                          <ScrollFadeIn delay={0.6}>
                           <Box className='carousel-detail-text'
                             sx={{
                               mt: 'auto',
@@ -321,6 +334,7 @@ function ProjectCarousel() {
                             </Typography>
                             <Typography>{project.description2}</Typography>
                           </Box>
+                          </ScrollFadeIn>
                         </Box>
                         
                       </Box>
